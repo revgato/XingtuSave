@@ -1,0 +1,18 @@
+{
+    "create": {
+      "path": "./create.png"
+    },
+    "history": {
+        "path": "./history.png"
+    },
+    "plan": {
+        "path": "./plan.png"
+    },
+    "statistics": {
+        "path": "./statistics.png"
+    },
+    "suggest": {
+        "path": "./suggest.png"
+    }
+  }
+  
