@@ -22,7 +22,7 @@ export default function NewPlan({ navigation }: ProfileProps) {
   const isDarkMode = useColorScheme() === 'dark';
   const [newTodo, setNewTodo] = useState('');
   const [todos, setTodos] = useState<ToDoItem[]>([]);
-  const [age, setAge] = useState('');
+  const [money, setMoney] = useState('');
 
   const addPlan = async () => {
     const db = await getDBConnection();
@@ -32,12 +32,7 @@ export default function NewPlan({ navigation }: ProfileProps) {
       const newTodos = [
         ...todos,
         {
-          id: todos.length
-            ? todos.reduce((acc, cur) => {
-                if (cur.id > acc.id) return cur;
-                return acc;
-              }).id + 1
-            : 0,
+          id: Number(money),
           value: newTodo,
         },
       ];
@@ -69,8 +64,8 @@ export default function NewPlan({ navigation }: ProfileProps) {
           <TextInput
         style={styles.input}
         placeholder="Số tiền"
-        value={age}
-        onChangeText={setAge}
+        value={money}
+        onChangeText={setMoney}
         keyboardType="numeric"
       />
           <Button title="Lưu" onPress={addPlan} />
